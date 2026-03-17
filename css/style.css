@@ -362,7 +362,7 @@
     aspect-ratio: 4/5;
     object-fit: cover;
     display: block;
-    background: url('assets/hero-vehicle.jpg') center/cover;
+    background: url('../assets/hero-vehicle.jpg') center/cover;
   }
   .about-badge {
     position: absolute;
