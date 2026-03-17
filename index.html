@@ -14,12 +14,16 @@
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo">Nayak<span>Transport</span></a>
-  <ul class="nav-links">
+
+  <!-- ✅ ADD ID HERE -->
+  <ul class="nav-links" id="navLinks">
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#testimonials">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+
+  <div class="menu-btn" id="menuBtn" onclick="toggleMenu()">☰</div>
 </nav>
 
 <!-- HERO: scroll-driven video + portrait reveal -->
@@ -27,7 +31,7 @@
   <div id="hero-sticky">
 
     <!-- Background video (replace src with tata.mp4 for your real video) -->
-    <video id="hero-video" src="assets/tata.mp4" muted playsinline></video>
+    <video id="hero-video" src="/assets/hero.mp4" autoplay muted loop playsinline></video>
 
     <!-- Dark overlay -->
     <div id="hero-video-overlay"></div>
@@ -45,7 +49,7 @@
 
     <!-- Phase 2: driver portrait reveal (replace src with a.jpeg / your real photo) -->
     <div id="hero-reveal">
-      <img class="reveal-portrait" src="assets/a.jpeg"
+      <img class="reveal-portrait" src="/assets/a.jpeg"
            onerror="this.src='https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=900&q=80'"
            alt="H Yogish Nayak">
       <div class="driver-card">
@@ -221,8 +225,7 @@
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script src="js/script.js">
+<script src="js/script.js"></script>
 
-</script>
 </body>
 </html>

@@ -8,7 +8,13 @@ const nav        = document.getElementById('nav');
 
 const TRIGGER = 0.52;
 let videoReady = false;
+heroVideo.addEventListener("loadedmetadata", () => {
+  console.log("video ready");
+});
 
+if(heroVideo.readyState >= 2){
+  heroVideo.currentTime = scrollProgress * heroVideo.duration;
+}
 /* Safe check */
 if (heroVideo) {
   heroVideo.addEventListener('loadedmetadata', () => videoReady = true);
@@ -89,4 +95,10 @@ links.forEach(link => {
     menu.classList.remove("show");
     menuBtn.innerHTML = "☰";
   });
+});
+document.addEventListener("click", (e) => {
+  if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+    menu.classList.remove("show");
+    menuBtn.innerHTML = "☰";
+  }
 });
