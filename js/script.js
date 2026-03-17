@@ -1,71 +1,70 @@
-/* HERO SCROLL VIDEO */
-const heroVideo  = document.getElementById('hero-video');
-const heroScroll = document.getElementById('hero-scroll');
-const heroReveal = document.getElementById('hero-reveal');
-const heroText   = document.getElementById('hero-text');
-const scrollHint = document.getElementById('scrollHint');
-const nav        = document.getElementById('nav');
+document.addEventListener("DOMContentLoaded", () => {
 
-const TRIGGER = 0.52;
-let videoReady = false;
-heroVideo.addEventListener("loadedmetadata", () => {
-  console.log("video ready");
-});
+  const heroVideo  = document.getElementById('hero-video');
+  const heroScroll = document.getElementById('hero-scroll');
+  const heroReveal = document.getElementById('hero-reveal');
+  const heroText   = document.getElementById('hero-text');
+  const scrollHint = document.getElementById('scrollHint');
+  const nav        = document.getElementById('nav');
 
-if(heroVideo.readyState >= 2){
-  heroVideo.currentTime = scrollProgress * heroVideo.duration;
-}
-/* Safe check */
-if (heroVideo) {
-  heroVideo.addEventListener('loadedmetadata', () => videoReady = true);
-  heroVideo.addEventListener('canplay', () => videoReady = true);
-}
-
-function getHeroProgress() {
-  if (!heroScroll) return 0;
-
-  const rect = heroScroll.getBoundingClientRect();
-  const scrollable = heroScroll.offsetHeight - window.innerHeight;
-  const scrolled = -rect.top;
-
-  return Math.max(0, Math.min(1, scrolled / scrollable));
-}
-
-function heroLoop() {
-  requestAnimationFrame(heroLoop);
+  const TRIGGER = 0.52;
 
   if (!heroVideo || !heroScroll) return;
 
-  const progress = getHeroProgress();
+  let videoReady = false;
 
-  /* Video scrub */
-  if (videoReady && heroVideo.duration) {
-    heroVideo.currentTime = progress * heroVideo.duration;
+  heroVideo.addEventListener("loadedmetadata", () => {
+    videoReady = true;
+
+    heroVideo.play().then(() => {
+      heroVideo.pause();
+    }).catch(() => {});
+  });
+
+  function getHeroProgress() {
+    const rect = heroScroll.getBoundingClientRect();
+    const scrollable = heroScroll.offsetHeight - window.innerHeight;
+    const scrolled = -rect.top;
+
+    return Math.max(0, Math.min(1, scrolled / scrollable));
   }
 
-  /* Reveal logic */
-  if (progress >= TRIGGER) {
-    heroReveal?.classList.add('visible');
-    if (heroText) heroText.style.opacity = '0';
-    heroVideo.style.opacity = '0';
-    if (scrollHint) scrollHint.style.opacity = '0';
-  } else {
-    heroReveal?.classList.remove('visible');
-    if (heroText) heroText.style.opacity = '1';
-    heroVideo.style.opacity = '1';
-    if (scrollHint) {
-      scrollHint.style.opacity = progress < 0.08 ? '1' : '0';
+  function heroLoop() {
+    requestAnimationFrame(heroLoop);
+
+    const progress = getHeroProgress();
+
+    if (videoReady && heroVideo.duration) {
+      const targetTime = progress * heroVideo.duration;
+
+      if (Math.abs(heroVideo.currentTime - targetTime) > 0.03) {
+        heroVideo.currentTime = targetTime;
+      }
+    }
+
+    if (progress >= TRIGGER) {
+      heroReveal?.classList.add('visible');
+      heroText && (heroText.style.opacity = '0');
+      heroVideo.style.opacity = '0';
+      scrollHint && (scrollHint.style.opacity = '0');
+    } else {
+      heroReveal?.classList.remove('visible');
+      heroText && (heroText.style.opacity = '1');
+      heroVideo.style.opacity = '1';
+      scrollHint && (scrollHint.style.opacity = progress < 0.08 ? '1' : '0');
     }
   }
-}
-heroLoop();
 
-/* NAV SCROLL (only ONE listener) */
-window.addEventListener('scroll', () => {
-  if (!nav || !heroScroll) return;
+  heroLoop();
 
-  const pastHero = window.scrollY > (heroScroll.offsetHeight - window.innerHeight);
-  nav.classList.toggle('scrolled', pastHero);
+  /* NAV SCROLL */
+  window.addEventListener('scroll', () => {
+    if (!nav || !heroScroll) return;
+
+    const pastHero = window.scrollY > (heroScroll.offsetHeight - window.innerHeight);
+    nav.classList.toggle('scrolled', pastHero);
+  });
+
 });
 
 /* REVEAL ANIMATION (only once) */
