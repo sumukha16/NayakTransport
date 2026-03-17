@@ -1,0 +1,228 @@
+<!-- redeploy -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nayak Transport</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Nayak<span>Transport</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO: scroll-driven video + portrait reveal -->
+<div id="hero-scroll">
+  <div id="hero-sticky">
+
+    <!-- Background video (replace src with tata.mp4 for your real video) -->
+    <video id="hero-video" src="assets/tata.mp4" muted playsinline></video>
+
+    <!-- Dark overlay -->
+    <div id="hero-video-overlay"></div>
+
+    <!-- Phase 1: text shown over the video -->
+    <div id="hero-text">
+      <span class="hero-eyebrow">Trusted Transport Services</span>
+      <h1 class="hero-h1">Reliable Transport for<br><em>Your Every Need</em></h1>
+      <p class="hero-sub">Your trusted partner for moving goods safely and on time — big or small, near or far.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-gold">Get a Free Quote →</a>
+        <a href="#services" class="btn-outline">Our Services</a>
+      </div>
+    </div>
+
+    <!-- Phase 2: driver portrait reveal (replace src with a.jpeg / your real photo) -->
+    <div id="hero-reveal">
+      <img class="reveal-portrait" src="assets/a.jpeg"
+           onerror="this.src='https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=900&q=80'"
+           alt="H Yogish Nayak">
+      <div class="driver-card">
+        <div class="driver-avatar"></div>
+        <div class="driver-info">
+          <div class="name">H Yogish Nayak</div>
+          <div class="title">Your Local Transport Expert</div>
+          <div class="years">10+ Years of Safe Driving</div>
+          <div class="stars">★★★★★ Trusted by 200+ Customers</div>
+        </div>
+      </div>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-gold">Contact Me →</a>
+      </div>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="scroll-hint" id="scrollHint">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="reveal">
+    <span class="section-label">What We Do</span>
+    <h2 class="section-title">What We Move<br>for You</h2>
+    <p class="section-sub">From household moves to business deliveries, we handle it all with care and professionalism.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">🏠</div>
+      <div class="service-name">Household Relocation</div>
+      <p class="service-desc">Moving your home without the stress. We handle your belongings with the care they deserve.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">📦</div>
+      <div class="service-name">Commercial Goods</div>
+      <p class="service-desc">Reliable delivery for your business products. On time, every time — keeping your operations running smoothly.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🛋️</div>
+      <div class="service-name">Furniture Delivery</div>
+      <p class="service-desc">Safe handling for your valuable furniture pieces, with proper care taken at every step of the journey.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-img-wrap reveal">
+      <div class="about-img"></div>
+      <div class="about-badge">
+        <span class="big">10+</span>
+        <span class="small">Years on the Road</span>
+      </div>
+    </div>
+    <div class="about-text reveal">
+      <span class="section-label">Our Story</span>
+      <h2 class="section-title">More Than a Driver,<br>A Trusted Partner</h2>
+      <div class="about-stats">
+        <div class="stat-item">
+          <div class="stat-num">200+</div>
+          <div class="stat-lbl">Happy Customers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">5000+</div>
+          <div class="stat-lbl">Deliveries Made</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-lbl">On-Time Rate</div>
+        </div>
+      </div>
+      <p class="section-sub">With over 10 years on the road, Manoj Sharma is more than just a driver. He's a dedicated professional who takes pride in ensuring your belongings arrive safely and on time. We've built a reputation for reliability, one mile at a time. Our mission is simple: to make your transport and moving experience as seamless and stress-free as possible.</p>
+      <div class="about-tags">
+        <span class="about-tag">✓ Fully Licensed</span>
+        <span class="about-tag">✓ Insured Vehicle</span>
+        <span class="about-tag">✓ Punctual &amp; Reliable</span>
+        <span class="about-tag">✓ Careful Handling</span>
+      </div>
+      <a href="#contact" class="btn-gold">Book a Transport →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="reveal" style="text-align:center">
+    <span class="section-label">Reviews</span>
+    <h2 class="section-title">What Our Customers<br>Are Saying</h2>
+    <p class="section-sub" style="margin: 0 auto 52px">Real words from people who trusted us with their most important moves.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">Manoj was incredible! He arrived on time, was extremely careful with my furniture, and got everything to my new apartment without a scratch. Will definitely use again!</p>
+      <div class="testi-author">
+        <div class="testi-avatar">R</div>
+        <div>
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-name">Ravi</div>
+          <div class="testi-loc">Bramavara</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">I've been using this transport service for my business for two years now. They are consistently reliable and very professional. We have never had a single issue with our deliveries.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">P</div>
+        <div>
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-name">ptrakash kumar</div>
+          <div class="testi-loc">chanthar, Bramavara</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-quote">"</div>
+      <p class="testi-text">Very affordable and super professional. Manoj helped us with a last-minute move and handled everything perfectly. Highly recommended to anyone looking for a trustworthy transport service.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">A</div>
+        <div>
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-name">sumil shetty</div>
+          <div class="testi-loc">matpady, Bramavara</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-info reveal">
+      <span class="section-label">Get in Touch</span>
+      <h2 class="section-title">Ready to Move?<br>Contact Us Today</h2>
+      <p class="section-sub">Reach out for a free, no-obligation quote. We respond quickly and make booking simple.</p>
+
+      <div class="contact-method">
+        <div class="contact-method-icon">📞</div>
+        <div>
+          <div class="contact-method-label">Call / WhatsApp</div>
+          <div class="contact-method-value"><a href="tel:+919341759047">+91 93417 59047</a></div>
+        </div>
+      </div>
+      <div class="contact-method">
+        <div class="contact-method-icon">📍</div>
+        <div>
+          <div class="contact-method-label">Based In</div>
+          <div class="contact-method-value">Bramavara, udupi</div>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Reliable<span>Transport</span></span>
+  <p>© 2025 Reliable Transport Partner. All rights reserved.</p>
+  <p style="margin-top:6px">Serving Bengaluru &amp; surrounding areas · Licensed &amp; Insured</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="js/script.js">
+
+</script>
+</body>
+</html>
